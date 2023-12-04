@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="CSS/inventarioProducto2.css">
+</head>
+<body>
+<div class="banner">
+        <div class="logo">
+        <h3 class="p" >HOSPITAL DE EMERGENCIA</h3>
+        <h2 class="p1" >"Jose Casimiro Ulloa"</h2>
+        <h3 class="p2" > PRODUCTOS </h3>
+            <img src="IMG/logo.png" alt="Logotipo de la farmacia">
+        </div>
+    </div>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Marca</th>
+            <th>Stock</th>
+        </tr>
+        <?php
+        include 'base_de_datos/conexion.php';
+        $categoria_id = $_GET['categoriaId'];
+        $sql_productos = "SELECT Nombre, Precio, Marca, stock FROM producto WHERE Categoria_id='$categoria_id'";
+        $run_productos = mysqli_query($con, $sql_productos);
+        if(mysqli_num_rows($run_productos) > 0){
+            while($fila = mysqli_fetch_assoc($run_productos)){
+                ?>
+                <tr>
+                    <td><?php echo $fila['Nombre']; ?></td>
+                    <td><?php echo $fila['Precio']; ?></td>
+                    <td><?php echo $fila['Marca']; ?></td>
+                    <td><?php echo $fila['stock']; ?></td>
+                </tr>
+                <?php
+            }
+        }
+        ?>
+    </table>
+    <div class="banner2">
+        <a href="inventario.php">Volver</a>
+    </div>
+</body>
+</html>
