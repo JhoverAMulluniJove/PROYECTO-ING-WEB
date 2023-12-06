@@ -1,6 +1,6 @@
 <?php
 // Ruta del archivo HTML
-$rutaArchivoHTML = 'C:\xampp\htdocs\PROYECTO-ING-WEB\VISTAAUX/index.html';
+$rutaArchivoHTML = 'C:\xampp\htdocs\PROYECTO-ING-WEB\VISTA\HTML\index.html';
 
 // Intentar abrir y leer el archivo HTML
 $contenidoHTML = file_get_contents($rutaArchivoHTML);
