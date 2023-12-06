@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>LOGIN</title>
+    <link rel="stylesheet" type="text/css" href="CSS/index.css">
+    <script src="../MODELO/login.php" type="module"></script>
+</head>
+<body>
+    <div class="container">
+        <h3>FERRETERIA</h3>
+        <form method="post" action="../MODELO/login.php">
+            <label for="nombre_usuario">Nombre de Usuario:</label>
+            <input type="text" id="nombre_usuario" name="nombre_usuario" required>
+            <br>
+            <label for="password_usuario">Contraseña:</label>
+            <input type="password" id="password_usuario" name="password_usuario" required>
+            <br>
+            <input type="submit" value="Iniciar sesión">
+        </form>
+        
+    </div>
+</body>
+</html>
