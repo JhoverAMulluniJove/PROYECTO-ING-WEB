@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="CSS/inventario.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="logo">
+        <h3 class="p" >HOSPITAL DE EMERGENCIA</h3>
+        <h2 class="p1" >"Jose Casimiro Ulloa"</h2>
+        <h3 class="p2" > TIPOS DE MEDICAMENTOS</h3>
+            <img src="IMG/logo.png" alt="Logotipo de la farmacia">
+        </div>
+    </div>
+    
+    
+    <div class="button-container">
+        <?php 
+        include 'base_de_datos/conexion.php';
+        $sql_categoria="SELECT NOMBRE, Categoria_id from categoria";
+        $run_categoria=mysqli_query($con,$sql_categoria);
+        if(mysqli_num_rows($run_categoria)>0){
+            $count = 0;
+            foreach($run_categoria as $fila){
+                if ($count < 14) {
+                    ?>
+                    <a href="inventarioProducto.php?categoriaId=<?php echo $fila['Categoria_id'];?>"><?php echo $fila['NOMBRE'];?></a>
+                    <?php
+                }
+                $count++;
+            }
+        }
+        ?>
+    </div>
+    
+    <div class="banner2">
+        <a href="menu.php">Volver</a>
+    </div>
+</body>
+</html>
