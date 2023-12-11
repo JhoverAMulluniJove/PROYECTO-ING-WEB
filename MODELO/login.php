@@ -2,7 +2,7 @@
 session_start();
 $host_db = "localhost";
 $user_db = "root";
-$pass_db = "artescocielo10";
+$pass_db = "";
 $db_name = "ferreteria";
 $tbl1_name = "usuario";
 $conexion = new mysqli($host_db, $user_db, $pass_db, $db_name);
