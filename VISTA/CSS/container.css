@@ -1,0 +1,117 @@
+@font-face {
+    font-family: Oswald;
+    font-weight: 500;
+    font-style: normal;
+    font-display: fallback;
+    src: url("//www.ferreteriaweb.cl/cdn/fonts/oswald/oswald_n5.22b74dce86cb1e4738ccceb326c9284bc24641e9.woff2?h1=ZmVycmV0ZXJpYXdlYi5jbA&h2=Y29tZXJjaWFsLWZlcndlYi5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=ad6f98ee37d13bcee1b362174a1c16b9949f45a42c25e99ad82cf2e894ae7e8a") format("woff2"),
+        url("//www.ferreteriaweb.cl/cdn/fonts/oswald/oswald_n5.c60897f79173105d5bae1e28e68e9326a4a64631.woff?h1=ZmVycmV0ZXJpYXdlYi5jbA&h2=Y29tZXJjaWFsLWZlcndlYi5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=cd54590d60478b01364d14e49305b9fac2fb64c0390fe045753282457b280100") format("woff");
+    }
+    @font-face {
+    font-family: "Libre Franklin";
+    font-weight: 500;
+    font-style: normal;
+    font-display: fallback;
+    src: url("//www.ferreteriaweb.cl/cdn/fonts/libre_franklin/librefranklin_n5.775da832f210e5f49ac54362773aef0db8abdf4c.woff2?h1=ZmVycmV0ZXJpYXdlYi5jbA&h2=Y29tZXJjaWFsLWZlcndlYi5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=a51b40f936a2fc1cbd9875b261210e9974c42d6c935414a607e64946e7bec643") format("woff2"),
+        url("//www.ferreteriaweb.cl/cdn/fonts/libre_franklin/librefranklin_n5.b7393102a0f69182d51c4eab9f4304da36d73d7f.woff?h1=ZmVycmV0ZXJpYXdlYi5jbA&h2=Y29tZXJjaWFsLWZlcndlYi5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=72df66c8ec7b1b1107d050cd7f5f9c0e26637b119dca23b5450366b947f98781") format("woff");
+    }
+    @font-face {
+    font-family: "Libre Franklin";
+    font-weight: 600;
+    font-style: normal;
+    font-display: fallback;
+    src: url("//www.ferreteriaweb.cl/cdn/fonts/libre_franklin/librefranklin_n6.2f99b2735f028f577743c9c7cd17c163a5373c93.woff2?h1=ZmVycmV0ZXJpYXdlYi5jbA&h2=Y29tZXJjaWFsLWZlcndlYi5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=6ca7e7d4da46883a7e2459d6f6f8a632f16fabea20c66ef427da56b0c5ea98d0") format("woff2"),
+        url("//www.ferreteriaweb.cl/cdn/fonts/libre_franklin/librefranklin_n6.1217a1bb772bc9844d693eff8231cd5d79960528.woff?h1=ZmVycmV0ZXJpYXdlYi5jbA&h2=Y29tZXJjaWFsLWZlcndlYi5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=266baaf21d688875c65b1b4a705d0318c21c8ffde55184a175b3641ff3ec90a4") format("woff");
+    }
+    @font-face {
+    font-family: "Libre Franklin";
+    font-weight: 700;
+    font-style: normal;
+    font-display: fallback;
+    src: url("//www.ferreteriaweb.cl/cdn/fonts/libre_franklin/librefranklin_n7.fa245752b96e66ae9115b50816ff998ec745d98a.woff2?h1=ZmVycmV0ZXJpYXdlYi5jbA&h2=Y29tZXJjaWFsLWZlcndlYi5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=cf19588db6d50203805cd219c63a35f7ec7cf362300613d14ac3af7c648e93c1") format("woff2"),
+        url("//www.ferreteriaweb.cl/cdn/fonts/libre_franklin/librefranklin_n7.715cc18300f90ef0b9b6b4d4f682308f8036860e.woff?h1=ZmVycmV0ZXJpYXdlYi5jbA&h2=Y29tZXJjaWFsLWZlcndlYi5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=14e3e84f46f858ed395e511feb93251070ff77daeb2824bb37e0a8a82af1259c") format("woff");
+    }
+    @font-face {
+    font-family: "Libre Franklin";
+    font-weight: 500;
+    font-style: italic;
+    font-display: fallback;
+    src: url("//www.ferreteriaweb.cl/cdn/fonts/libre_franklin/librefranklin_i5.926b11960e5b04b17066d35ae8c8b26495076aa8.woff2?h1=ZmVycmV0ZXJpYXdlYi5jbA&h2=Y29tZXJjaWFsLWZlcndlYi5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=8b327cc0aeade60e123664e253cb520760bdac1e256423406d88af847b9b112e") format("woff2"),
+        url("//www.ferreteriaweb.cl/cdn/fonts/libre_franklin/librefranklin_i5.3a83adda15c055b945c95b31fb0b92870d5f92de.woff?h1=ZmVycmV0ZXJpYXdlYi5jbA&h2=Y29tZXJjaWFsLWZlcndlYi5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=5e842bf7694609612b5fb49f24d0eb163212dc9c5725d64c1d8ad7a17682fe1f") format("woff");
+    }
+    @font-face {
+    font-family: "Libre Franklin";
+    font-weight: 700;
+    font-style: italic;
+    font-display: fallback;
+    src: url("//www.ferreteriaweb.cl/cdn/fonts/libre_franklin/librefranklin_i7.e5dc8a26bc24bad6062a45d7d37f1904d36a209a.woff2?h1=ZmVycmV0ZXJpYXdlYi5jbA&h2=Y29tZXJjaWFsLWZlcndlYi5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=8db725c5c04fd58fc3f6f1e03e38c9026baae95fbfbe03c589b97643d6e2fd63") format("woff2"),
+        url("//www.ferreteriaweb.cl/cdn/fonts/libre_franklin/librefranklin_i7.f4e3e94ec9b359c108d428bb7dc48c34d0a317dd.woff?h1=ZmVycmV0ZXJpYXdlYi5jbA&h2=Y29tZXJjaWFsLWZlcndlYi5hY2NvdW50Lm15c2hvcGlmeS5jb20&hmac=9f45357eb241c8b3034e5a4cd21c53ac64f80b845a1bb47da6f8264bf2a496bd") format("woff");
+    }
+    :root {
+        --default-text-font-size : 15px;
+        --base-text-font-size    : 14px;
+        --heading-font-family    : Oswald, sans-serif;
+        --heading-font-weight    : 500;
+        --heading-font-style     : normal;
+        --text-font-family       : "Libre Franklin", sans-serif;
+        --text-font-weight       : 500;
+        --text-font-style        : normal;
+        --text-font-bolder-weight: 600;
+        --text-link-decoration   : normal;
+
+        --text-color               : #414141;
+        --text-color-rgb           : 65, 65, 65;
+        --heading-color            : #757575;
+        --border-color             : #b7b5b5;
+        --border-color-rgb         : 183, 181, 181;
+        --form-border-color        : #aaa8a8;
+        --accent-color             : #035a69;
+        --accent-color-rgb         : 3, 90, 105;
+        --link-color               : #00badb;
+        --link-color-hover         : #00798e;
+        --background               : #f2f2f2;
+        --secondary-background     : #ffffff;
+        --secondary-background-rgb : 255, 255, 255;
+        --accent-background        : rgba(3, 90, 105, 0.08);
+
+        --input-background: #ffffff;
+
+        --error-color       : #ff0000;
+        --error-background  : rgba(255, 0, 0, 0.07);
+        --success-color     : #00aa00;
+        --success-background: rgba(0, 170, 0, 0.11);
+
+        --primary-button-background      : #0071bc;
+        --primary-button-background-rgb  : 0, 113, 188;
+        --primary-button-text-color      : #ffffff;
+        --secondary-button-background    : #0071bc;
+        --secondary-button-background-rgb: 0, 113, 188;
+        --secondary-button-text-color    : #ffffff;
+
+        --header-background      : #323232;
+        --header-text-color      : #ffffff;
+        --header-light-text-color: #ffffff;
+        --header-border-color    : rgba(255, 255, 255, 0.3);
+        --header-accent-color    : #000000;
+
+        --footer-background-color:    #323232;
+        --footer-heading-text-color:  #ffffff;
+        --footer-body-text-color:     #ffffff;
+        --footer-accent-color:        #00badb;
+        --footer-accent-color-rgb:    0, 186, 219;
+        --footer-border:              none;
+        
+        --flickity-arrow-color: #858181;--product-on-sale-accent           : #ee0000;
+        --product-on-sale-accent-rgb       : 238, 0, 0;
+        --product-on-sale-color            : #ffffff;
+        --product-in-stock-color           : #025a02;
+        --product-low-stock-color          : #ee0000;
+        --product-sold-out-color           : #677279;
+        --product-custom-label-1-background: #008a00;
+        --product-custom-label-1-color     : #ffffff;
+        --product-custom-label-2-background: #00a500;
+        --product-custom-label-2-color     : #ffffff;
+        --product-review-star-color        : #ffbd00;
+
+        --mobile-container-gutter : 20px;
+        --desktop-container-gutter: 40px;
+    }

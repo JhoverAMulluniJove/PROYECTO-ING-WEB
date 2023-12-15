@@ -2,35 +2,33 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with Ollie landing page.">
     <meta name="author" content="Devcrud">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <title>FERRETERIA - CATALOGO</title>
 
-    <!-- Font icons -->
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="//www.ferreteriaweb.cl/cdn/shop/t/3/assets/theme.css?v=97500158340828915541612365466">
     <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/assets/vendors/themify-icons/css/themify-icons.css">
-    
-    <!-- Owl carousel -->
     <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/assets/vendors/owl-carousel/css/owl.carousel.css">
     <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/assets/vendors/owl-carousel/css/owl.theme.default.css">
-
-    <!-- Bootstrap + Ollie main styles -->
     <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/assets/css/ollie.css">
-
-    <!-- catalog.css -->
     <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/CSS/catalog.css">
-
+    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/CSS/container.css">
+    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/CSS/shoppingcart.css">
+    
 </head>
+
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
     <nav class="navbar navbar-light bg-light navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="../../../PROYECTO-ING-WEB/VISTA/assets/imgs/brand.svg" alt="" class="brand-img"></a>
+            <a class="navbar-brand" href="#"><img src="../../../PROYECTO-ING-WEB/VISTA/assets/imgs/brand.svg"
+                    alt="" class="brand-img"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -38,81 +36,233 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">INICIO</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">ACERCA DE</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#offer">OFERTAS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">DESTACADOS</a></li>
+                    <!-- Navigation Links -->
+                    <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/HTML/index.html">INICIO</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/HTML/catalog.html">CATALOGO</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#shoppingcart">CARRITO</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/HTML/ContactUs.html">CONTACTANOS</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <br><br><br><br>
-    
     <header>
-        <h1>Ferretería XYZ - Inventario</h1>
+        <h1>Ferretería Catalogo</h1>
     </header>
 
-    <!--CATEGORIA 01-->
-    <div class="container">
-        <p><br><h2 class="section-title mb-4">CATEGORIA 01</h2 ></p>
-    </div>
-    <section id="inventory">
-        <article class="product">
-            <img src="../../../PROYECTO-ING-WEB/VISTA/imgs/CATALOGO/C1/alicatesalic001.jpg" alt="Producto 1">
-            <h2>Llave Inglesa</h2>
-            <p class="xs-font">Descripcion: </p>
-            <p class="xs-font">Categoria: </p>
-            <p class="xs-font">Marca: </p>
-            <p class="xs-font">Stock: </p>
-            <p class="price">Precio: $15.99</p>
-        </article>
+    <!-- CATEGORIA 01 -->
+    <section id="categoria01" class="container">
+        <h2 class="section-title mb-4">CATEGORIA 01</h2>
+        <div class="product-container">
+            <article class="product" id="product-container">
+                <img src="../../../PROYECTO-ING-WEB/VISTA/imgs/CATALOGO/C1/alicatesalic001.jpg" alt="Producto 1">
+                <h2 id="name">Alicate</h2>
+                <p class="xs-font" id="description">Descripción: </p>
+                <p class="xs-font" id="category">Categoría: </p>
+                <p class="xs-font" id="brand">Marca: </p>
+                <p class="xs-font" id="stock">Stock: </p>
+                <p class="price" id="price">Precio: $10.99</p>
+                <button type="submit" class="buy-button" onclick="addToCartAndShowDetails()">AÑADIR AL CARRITO</button>
+            </article>
+        </div>
+        <script>
+            // Realizar una solicitud AJAX para obtener los datos del archivo PHP
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Parsear la respuesta JSON
+                    const data = JSON.parse(xhr.responseText);
+            
+                    // Mostrar los datos en el contenedor
+                    mostrarDatos(data);
+                }
+            };
+            xhr.open('GET', '../CONTROLADOR/JS/mostrar_datos.php', true);
+            xhr.send();
+            
+            // Función para mostrar los datos en el contenedor
+            function mostrarDatos(data) {
+                const datosContainer = document.getElementById('product-container');
+                
+                // Generar HTML con los datos
+                if (data.length > 0) {
+                    let tableHTML = "<table border='1'><tr><th>ID</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Cantidad</th><th>ID Categoría</th><th>ID Marca</th><th>ID Proveedor</th></tr>";
+                    data.forEach(row => {
+                        tableHTML += `<tr>
+                            <td>${row.id_producto}</td>
+                            <td>${row.nombre_producto}</td>
+                            <td>${row.descripcion_producto}</td>
+                            <td>${row.precio_producto}</td>
+                            <td>${row.cantidad_producto}</td>
+                            <td>${row.categoria_id_categoria}</td>
+                            <td>${row.marca_id_marca}</td>
+                            <td>${row.proveedor_id_proveedor}</td>
+                        </tr>`;
+                    });
+                    tableHTML += "</table>";
+            
+                    // Agregar la tabla al contenedor
+                    datosContainer.innerHTML = tableHTML;
+                } else {
+                    datosContainer.innerHTML = "0 resultados";
+                }
+            }
+            </script>            
+        <script src="../../../PROYECTO-ING-WEB/CONTROLADOR/JS/addtocartprueba.js"></script>
+        <script src="../../../PROYECTO-ING-WEB/CONTROLADOR/JS/addtocart.js"></script>
+        <script src="../../../PROYECTO-ING-WEB/CONTROLADOR/JS/datos.js"></script>
+    </section>
+        
 
-        <article class="product">
-            <img src="../../../PROYECTO-ING-WEB/VISTA/imgs/CATALOGO/C1/cuchillacuch551.jpeg" alt="Producto 2">
-            <h2>Taladro Eléctrico</h2>
-            <p class="xs-font">Descripcion: </p>
-            <p class="xs-font">Categoria: </p>
-            <p class="xs-font">Marca: </p>
-            <p class="xs-font">Stock: </p>
-            <p class="price">Precio: $5.99</p>
-        </article>
+    <!-- CATEGORIA 02 -->
+    <section id="categoria02" class="container">
+        <h2 class="section-title mb-4">CATEGORIA 02</h2>
+        <div class="product-container">
+            <article class="product">
+                <img src="../../../PROYECTO-ING-WEB/VISTA/imgs/CATALOGO/C2/codocod456.jpeg" alt="Producto 1">
+                <h2>Llave Inglesa</h2>
+                <p class="xs-font" id="description">Descripción: </p>
+                <p class="xs-font" id="category">Categoría: </p>
+                <p class="xs-font" id="brand">Marca: </p>
+                <p class="xs-font" id="stock">Stock: </p>
+                <p class="price" id="price">Precio: $10.99</p>
+            </article>
+        </div>
     </section>
 
-    <!--CATEGORIA 02-->
-    <div class="container">
-        <p><br><h2 class="section-title mb-4">CATEGORIA 02</h2 ></p>
-    </div>
-    <section id="inventory">
-        <article class="product">
-            <img src="../../../PROYECTO-ING-WEB/VISTA/imgs/CATALOGO/C2/codocod456.jpeg" alt="Producto 1">
-            <h2>Llave Inglesa</h2>
-            <p class="xs-font">Descripcion: </p>
-            <p class="xs-font">Categoria: </p>
-            <p class="xs-font">Marca: </p>
-            <p class="xs-font">Stock: </p>
-            <p class="price">Precio: $10.99</p>
-        </article>
+    <!-- CATEGORIA 03 -->
+    <section id="categoria03" class="container">
+        <h2 class="section-title mb-4">CATEGORIA 03</h2>
+        <div class="product-container">
+            <article class="product">
+                <img src="../../../PROYECTO-ING-WEB/VISTA/imgs/CATALOGO/C3/nivellev034.jpeg" alt="Producto 1">
+                <h2>Llave Inglesa</h2>
+                <p class="xs-font">Descripcion: </p>
+                <p class="xs-font">Categoria: </p>
+                <p class="xs-font">Marca: </p>
+                <p class="xs-font">Stock: </p>
+                <p class="price">Precio: $25.99</p>
+            </article>
+        </div>
     </section>
 
-    <!--CATEGORIA 02-->
-    <div class="container">
-        <p><br><h2 class="section-title mb-4">CATEGORIA 03</h2 ></p>
-    </div>
-    <section id="inventory">
-        <article class="product">
-            <img src="../../../PROYECTO-ING-WEB/VISTA/imgs/CATALOGO/C3/nivellev034.jpeg" alt="Producto 1">
-            <h2>Llave Inglesa</h2>
-            <p class="xs-font">Descripcion: </p>
-            <p class="xs-font">Categoria: </p>
-            <p class="xs-font">Marca: </p>
-            <p class="xs-font">Stock: </p>
-            <p class="price">Precio: $25.99</p>
-        </article>
-    </section>
+    <!-- Parte del carrito -->
+    <main id="main" role="main">
+        <main id="main" role="main">
+            <div id="shopify-section-cart-template" class="shopify-section">
+              <section data-section-id="cart-template" data-section-type="cart" data-section-settings='{"showShippingEstimator": false}'>
+                <div class="container">
+                  <h1 class="page__title heading h1">Mi carrito</h1>
+                  <button type="button" name="checkout" class="page__button-action button button--primary button--full button--large hidden-tablet-and-up" onclick="checkout()">Caja</button>
+                </div>
+          
+                <div class="cart-wrapper">
+                  <div class="cart-wrapper__inner">
+                    <div class="cart-wrapper__inner-inner">
+                      <div class="container container--flush">
+                        <div class="card">
+                          <div class="table-wrapper">
+                            <table class="line-item-table table table--loose">
+                              <thead class="hidden-phone">
+                                <tr>
+                                  <th>Producto</th>
+                                  <th class="table__cell--center">Descripcion</th>
+                                  <th class="table__cell--center">Cantidad</th>
+                                  <th class="table__cell--right">Total</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="line-item line-item--stack">
+                                    <!-- Información del producto -->
+                                    <td class="line-item__product-info">
+                                        <div id="productDetailsContainer" class="line-item__product-info-wrapper product-details" style="display: none;">
+                                            <div class="line-item__image-wrapper">
+                                                <img src="../../../PROYECTO-ING-WEB/VISTA/imgs/CATALOGO/C1/alicatesalic001.jpg" alt="Producto 1">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- Detalles del producto -->
+                                    <td class="line-item__product-info align-left">
+                                        <div id="productDetailsContainer" class="product-details" style="display: none;">
+                                            <div class="line-item__meta">
+                                                <a class="line-item__vendor link" href="#">Categoria 01</a>
+                                                <a href="#" class="line-item__title link text--strong">Producto: Llave Inglesa</a>
+                                                <div class="line-item__price-list">
+                                                    <span class="line-item__price">Precio: $15.99</span>
+                                                </div>
+                                                <a href="/cart/change?quantity=0&id=producto_id:linea_id" data-action="decrease-quantity"
+                                                    data-quantity="0" data-line-id="producto_id:linea_id" class="line-item__quantity-remove link">Quitar del carrito</a>
+                                            </div>
+                                        </div>
+                                    </td>
 
-    </body>
+                                    <!-- Cantidad del Producto -->
+                                    <td class="line-item__quantity table__cell--center hidden-phone">
+                                        <div class="product-details" style="display: none;">
+                                            <!-- Botón para disminuir la cantidad en 1 -->
+                                            <button type="button" id="decreaseButton" data-action="decrease-quantity" aria-label="Disminuir la cantidad en 1" title="Disminuir la cantidad en 1">
+                                                <!-- Icono de resta -->
+                                                <svg focusable="false" class="icon icon--action" viewBox="0 0 10 2" role="presentation">
+                                                    <path d="M10 0v2H0V0z" fill="currentColor"></path>
+                                                </svg>
+                                            </button>
+
+                                            <!-- Entrada de cantidad -->
+                                            <input aria-label="Cantidad" class="quantity-selector__value" inputmode="numeric" id="quantityInput" data-current-value="1" size="2">
+
+                                            <!-- Botón para aumentar la cantidad en 1 -->
+                                            <button type="button" id="increaseButton" data-action="increase-quantity" aria-label="Aumentar la cantidad en 1" title="Aumentar la cantidad en 1">
+                                                <!-- Icono de suma -->
+                                                <svg focusable="false" class="icon icon--action" viewBox="0 0 10 10" role="presentation">
+                                                    <path d="M6 4h4v2H6v4H4V6H0V4h4V0h2v4z" fill="currentColor" fill-rule="evenodd"></path>
+                                                </svg>
+                                            </button>
+                                            <script src="../../../PROYECTO-ING-WEB/CONTROLADOR/JS/dismaum.js"></script>
+                                        </div>
+                                    </td>
+                                    <script src="../../../PROYECTO-ING-WEB/CONTROLADOR/JS/cantidad.js"></script>
+                                    <!-- Precio Total del Producto -->
+                                    <td class="line-item__line-price table__cell--right hidden-phone">
+                                        <div class="product-details" style="display: none;">
+                                            <span>Total: $21.813</span>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                
+                            </tbody>
+                            
+                            </table>
+                          </div>
+                        </div>
+          
+                        <form class="cart-recap" method="post" action="/cart" id="cart_form" novalidate="novalidate">
+                          <div id="cart" class="cart-recap__scroller">
+                            <h2>Carrito de compras</h2>
+                            <div class="card">
+                              <div class="card__section">
+                                <ul id="cart-items"></ul>
+                                <div class="cart-recap__price-line text--pull">
+                                  <p id="total"></p>
+                                </div>
+                                <button type="submit" name="checkout" class="cart-recap__checkout button button--primary button--full button--large" onclick="checkout()">Caja</button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </main>
+          
+    </main>
+        <!-- Optional: jQuery and Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- catalog.js -->
+
+</body>
+
 </html>

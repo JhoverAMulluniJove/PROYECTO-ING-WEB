@@ -29,8 +29,13 @@ function updateCart() {
 }
 
 function checkout() {
-  // Implement payment processing logic here
+  // Implementa la lógica de procesamiento de pago aquí
   alert('Gracias por tu compra!');
+  // Actualiza el carrito después de la compra
   cartItems = [];
   updateCart();
+
+  // Redirige a la página de carrito de compras
+  const shoppingCartURL = new URL('../../../PROYECTO-ING-WEB/VISTA/HTML/shoppingcart.html', window.location.origin);
+  window.location.href = shoppingCartURL.href;
 }
