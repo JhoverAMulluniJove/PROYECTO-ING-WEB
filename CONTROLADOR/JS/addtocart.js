@@ -36,6 +36,6 @@ function checkout() {
   updateCart();
 
   // Redirige a la página de carrito de compras
-  const shoppingCartURL = new URL('../../../PROYECTO-ING-WEB/VISTA/HTML/shoppingcart.html', window.location.origin);
+  const shoppingCartURL = new URL('../../../PROYECTO-ING-WEB/VISTA/HTML/catalog.php', window.location.origin);
   window.location.href = shoppingCartURL.href;
 }
