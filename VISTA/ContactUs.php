@@ -40,9 +40,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                   <!-- Navigation Links -->
-                  <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/HTML/index.html">INICIO</a></li>
-                  <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/HTML/catalog.html">CATALOGO</a></li>
-                  <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/HTML/ContactUs.html">CONTACTANOS</a></li>
+                  <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/index.html">INICIO</a></li>
+                  <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/CONTROLADOR/ProductoController.php">CATALOGO</a></li>
+                  <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/ContactUs.html">CONTACTANOS</a></li>
                 </ul>
               </div>
         </div>

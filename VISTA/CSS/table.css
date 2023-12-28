@@ -1,0 +1,56 @@
+/* Estilo para la tabla */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #333; /* negro */
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 2px solid #dee2e6; /* bordes más gruesos */
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 3px solid #dee2e6; /* bordes más gruesos */
+}
+
+.table tbody + tbody {
+    border-top: 3px solid #dee2e6; /* bordes más gruesos */
+}
+
+/* Estilo para las imágenes dentro de la tabla */
+.img-thumbnail {
+    max-width: 100px;
+    height: auto;
+    border: 2px solid #dee2e6; /* bordes más gruesos */
+}
+
+/* Estilo para los botones */
+.btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #ff0000; /* rojo */
+    border: 2px solid #ff0000; /* bordes más gruesos */
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #ffa500; /* naranja */
+    border: 2px solid #ffa500; /* bordes más gruesos */
+}
+
+/* Estilo para las secciones */
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}

@@ -1,30 +1,26 @@
 body {
-    background-color: #be6542;
+    background-color: #853b1e;
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.fondo{
-    position:relative;
-    right: 450px;
+    margin: 0;
 }
 
 .container {
     width: 300px;
-    height: 650px;
+    height: 400px;
     padding: 25px;
-    background-color: #be5f42;
-    position: 0px;
-    left: 870px;
+    background-color: #28262d;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.container h3 {
+.container h2 {
     margin-top: 15px;
     text-align: center;
-    color: white;
+    color: #ffffff; /* Cambia este color según tus preferencias */
 }
 
 .logo {
@@ -39,12 +35,13 @@ body {
 
 .container input[type="text"],
 .container input[type="password"] {
-    width: 95%;
+    width: 100%;
     padding: 10px;
-    margin-bottom: 2px;
-    margin-top:50px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
+    box-sizing: border-box;
+    color: #000000; /* Cambia este color según tus preferencias */
 }
 
 .container input[type="submit"] {
@@ -52,12 +49,18 @@ body {
     padding: 10px;
     background-color: #d1d35d;
     border: none;
-    color: #000000;
+    color: #ffffff; /* Cambia este color según tus preferencias */
     border-radius: 10px;
-    margin-top:50px;
     cursor: pointer;
 }
 
 .container input[type="submit"]:hover {
     background-color: #0056b3;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff; /* Color del texto de las etiquetas (blanco en este caso) */
+    text-align: left; /* Alinea el texto de la etiqueta a la izquierda */
 }
