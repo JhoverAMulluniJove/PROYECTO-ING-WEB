@@ -40,8 +40,8 @@
                     <li class="nav-item"><a class="nav-link" href="#about">ACERCA DE</a></li>
                     <li class="nav-item"><a class="nav-link" href="#offer">OFERTAS</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">DESTACADOS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../PROYECTO-ING-WEB/CONTROLADOR/ProductoController.php">CATALOGO</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/ContactUs.html">CONTACTANOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/CONTROLADOR/ProductoController.php">CATALOGO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/ContactUs.php">CONTACTANOS</a></li>
                     <li class="nav-item"><a class="btn btn-primary" href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
                     
                 </ul>

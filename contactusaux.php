@@ -40,10 +40,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                   <!-- Navigation Links -->
-                  <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/indexlogin.php">INICIO</a></li>
-                  <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/CONTROLADOR/ProductoController.php">CATALOGO</a></li>
-                  <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/ContactUs.php">CONTACTANOS</a></li>
-                  <li class="nav-item"><a class="btn btn-primary" href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+                  <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/index.php">INICIO</a></li>
+                  <!--<li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/CONTROLADOR/ProductoController.php">CATALOGO</a></li>-->
+                  <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/contactusaux.php">CONTACTANOS</a></li>
+                  <li class="nav-item"><a class="btn btn-primary" href="VISTA/login.php">Login</a></li>
                 </ul>
               </div>
         </div>
@@ -127,7 +127,6 @@
     <script src="../../../PROYECTO-ING-WEB/VISTApassets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="../../../PROYECTO-ING-WEB/VISTAassets/vendors/bootstrap/bootstrap.bundle.js"></script>
 
-    <script src="../../../PROYECTO-ING-WEB/CONTROLADOR/js/cerrarsesion.js"></script>
 </body>
 
 </html>

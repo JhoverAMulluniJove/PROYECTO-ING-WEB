@@ -3,13 +3,6 @@ $host_db = "localhost";
 $user_db = "root";
 $pass_db = "artescocielo10";
 $db_name = "ferreteria";
-$tbl1_name = "usuario";
-$conexion = new mysqli($host_db, $user_db, $pass_db, $db_name);
-
-// Verificar la conexión
-if ($conexion->connect_error) {
-    die("La conexión falló: " . $conexion->connect_error);
-}
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -19,7 +12,6 @@ class UserModel
 {
     private $conn;
 
-    // Constructor que recibe la conexión a la base de datos
     public function __construct($conn)
     {
         $this->conn = $conn;
@@ -56,19 +48,28 @@ class UserModel
     }
 
     // Función para registrar un nuevo usuario
-    public function registrarUsuario($nombreUsuario, $password, $clienteDNI)
+    public function registrarUsuario($clienteDNI, $Nombre_cliente, $Apellido_cliente, $Telefono_cliente, $email_cliente, $direccion_cliente, $id_usuario)
     {
-        // Realizar la lógica de registro aquí
-        // Consulta de ejemplo
-        $sql = "INSERT INTO usuario (nombre_usuario, password_usuario, cliente_DNI) VALUES (?, ?, ?)";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("sss", $nombreUsuario, $password, $clienteDNI);
+        if ($this->conn === null) {
+            throw new Exception("La conexión a la base de datos no está disponible.");
+        }
 
-        if ($stmt->execute()) {
-            // Registro exitoso
-            return true;
-        } else {
-            // Error en el registro
+        try {
+            // Modifica la llamada al procedimiento almacenado
+            $stmt = $this->conn->prepare("CALL InsertarCliente(?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("issisii", $clienteDNI, $Nombre_cliente, $Apellido_cliente, $Telefono_cliente, $email_cliente, $direccion_cliente, $id_usuario);
+
+            // Ejecutar el procedimiento almacenado
+            $success = $stmt->execute();
+            $stmt->close();
+
+            if ($success) {
+                return true;
+            } else {
+                throw new Exception("Error al ejecutar el procedimiento almacenado: " . $stmt->error);
+            }
+        } catch (Exception $e) {
+            echo "Error: " . $e->getMessage();
             return false;
         }
     }

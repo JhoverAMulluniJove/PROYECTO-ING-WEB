@@ -40,8 +40,8 @@
                     <li class="nav-item"><a class="nav-link" href="#about">ACERCA DE</a></li>
                     <li class="nav-item"><a class="nav-link" href="#offer">OFERTAS</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">DESTACADOS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../PROYECTO-ING-WEB/CONTROLADOR/ProductoController.php">CATALOGO</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/ContactUs.html">CONTACTANOS</a></li>
+                    <!--<li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/CONTROLADOR/ProductoController.php">CATALOGO</a></li>-->
+                    <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/contactusaux.php">CONTACTANOS</a></li>
                     <li class="nav-item"><a class="btn btn-primary" href="VISTA/login.php">Login</a></li>
                     
                 </ul>
@@ -157,38 +157,6 @@
         </div>
         <br><br>
     </section>
-
-    <!-- CATALOGO 
-    <section class="catalog" class=""></section>
-    
-    CARRITO
-    <section id="shoppingcart" class="section pb-0">
-        <div class="product">
-            <img src="producto1.jpg" alt="Producto 1">
-            <h2>Producto 1</h2>
-            <p>Descripción del Producto 1.</p>
-            <p class="price">$19.99</p>
-            <button class="buy-button" onclick="addToCart('Producto 1', 19.99)">Agregar al carrito</button>
-          </div>
-        
-          <div class="product">
-            <img src="producto2.jpg" alt="Producto 2">
-            <h2>Producto 2</h2>
-            <p>Descripción del Producto 2.</p>
-            <p class="price">$29.99</p>
-            <button class="buy-button" onclick="addToCart('Producto 2', 29.99)">Agregar al carrito</button>
-          </div>
-        
-          <div id="cart">
-            <h2>Carrito de compras</h2>
-            <ul id="cart-items"></ul>
-            <p id="total">Total: $0.00</p>
-            <button onclick="checkout()">Pagar</button>
-          </div>
-        
-          <script src="script.js"></script>
-    </section>
--->
 
     <!-- Core Scripts -->
     <script src="../../../PROYECTO-ING-WEB/VISTA/assets/vendors/jquery/jquery-3.4.1.js"></script>
