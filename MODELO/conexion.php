@@ -2,7 +2,7 @@
 // Configuración de la conexión a la base de datos
 $servername = "localhost";
 $username = "root";
-$password = "artescocielo10";
+$password = "";
 $dbname = "ferreteria";
 
 // Crear una nueva instancia de la clase mysqli para establecer la conexión a la base de datos

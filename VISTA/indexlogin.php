@@ -11,25 +11,23 @@
     <title>FERRETERIA</title>
 
     <!-- Font icons -->
-    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../PROYECTO-ING-WEB/VISTA/assets/vendors/themify-icons/css/themify-icons.css">
     
     <!-- Owl carousel -->
-    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/assets/vendors/owl-carousel/css/owl.carousel.css">
-    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/assets/vendors/owl-carousel/css/owl.theme.default.css">
+    <link rel="stylesheet" href="../../PROYECTO-ING-WEB/VISTA/assets/vendors/owl-carousel/css/owl.carousel.css">
+    <link rel="stylesheet" href="../../PROYECTO-ING-WEB/VISTA/assets/vendors/owl-carousel/css/owl.theme.default.css">
 
     <!-- Bootstrap + Ollie main styles -->
-    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/assets/css/ollie.css">
+    <link rel="stylesheet" href="../../PROYECTO-ING-WEB/VISTA/assets/css/ollie.css">
 
-    <link rel="stylesheet" href="sty.css">
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
-    <nav class="navbar navbar-light bg-light navbar-expand-lg fixed-top">
+    <nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="20">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="../../../PROYECTO-ING-WEB/VISTA/assets/imgs/brand.svg" alt="" class="brand-img"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#"><img src="assets/imgs/brand.svg" alt="" class="brand-img"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -40,7 +38,7 @@
                     <li class="nav-item"><a class="nav-link" href="#about">ACERCA DE</a></li>
                     <li class="nav-item"><a class="nav-link" href="#offer">OFERTAS</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">DESTACADOS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/CONTROLADOR/ProductoController.php">CATALOGO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/catalog.php">CATALOGO</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/ContactUs.php">CONTACTANOS</a></li>
                     <li class="nav-item"><a class="btn btn-primary" href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
                     
@@ -52,12 +50,13 @@
     <!--INICIO-->
     <header id="home" class="header">
         <div class="overlay"></div>
-        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-            <div class="container">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h1 class="carousel-title">FERRETERIA<br>- - - - - - - - - -</h1>
+            <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="container">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h1 class="carousel-title">FERRETERIA<br>- - - - - - - - - -</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -67,7 +66,6 @@
 
     <!-- ACERCA DE -->
     <section class="section" id="about">
-        <br><br>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-4 text-center">
@@ -159,19 +157,19 @@
     </section>
 
     <!-- Core Scripts -->
-    <script src="../../../PROYECTO-ING-WEB/VISTA/assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="../../../PROYECTO-ING-WEB/VISTA/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <script src="../../PROYECTO-ING-WEB/VISTA/assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="../../PROYECTO-ING-WEB/VISTA/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
     
     <!-- Bootstrap 3 affix -->
-    <script src="../../../PROYECTO-ING-WEB/VISTA/assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    <script src="../../PROYECTO-ING-WEB/VISTA/assets/vendors/bootstrap/bootstrap.affix.js"></script>
     
     <!-- Owl carousel -->
-    <script src="../../../PROYECTO-ING-WEB/VISTA/assets/vendors/owl-carousel/js/owl.carousel.js"></script>
+    <script src="../../PROYECTO-ING-WEB/VISTA/assets/vendors/owl-carousel/js/owl.carousel.js"></script>
 
     <!-- Ollie JS -->
-    <script src="../../../PROYECTO-ING-WEB/VISTA/assets/js/Ollie.js"></script>
+    <script src="../../PROYECTO-ING-WEB/VISTA/assets/js/ollie.js"></script>
 
-    <script src="../../../PROYECTO-ING-WEB/CONTROLADOR/js/cerrarsesion.js"></script>
+    <script src="../../PROYECTO-ING-WEB/CONTROLADOR/js/CerrarSesion.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Obtener los datos del formulario
         $nombreUsuario = $_POST["nombre_usuario"];
-        $password = $_POST["password_usuario"];
+        $passwordusuario = $_POST["password_usuario"];
 
         // Incluir el modelo de usuario
         require_once '../MODELO/UserModel.php';
@@ -12,7 +12,7 @@
         // Configurar la conexión a la base de datos
         $host_db = "localhost";
         $user_db = "root";
-        $pass_db = "artescocielo10";
+        $pass_db = "";
         $db_name = "ferreteria";
 
         $conexion = new mysqli($host_db, $user_db, $pass_db, $db_name);
@@ -28,9 +28,14 @@
         $userModel = new UserModel($conexion);
 
         // Intentar iniciar sesión
-        if ($userModel->iniciarSesion($nombreUsuario, $password)) {
+        if ($userModel->iniciarSesion($nombreUsuario, $passwordusuario)) {
             // Inicio de sesión exitoso, redirigir a indexlogin.php
-            header("Location: ../VISTA/indexlogin.php");
+            if($nombreUsuario = "admin"){
+                header("Location: ../VISTA/admin/indexloginadmin.php");
+            }
+            else{
+                header("Location: ../VISTA/indexlogin.php");
+            }
             exit();
         } else {
             // Inicio de sesión fallido, redirigir a login.php con un mensaje de error

@@ -1,11 +1,17 @@
 <?php
-$host_db = "localhost";
-$user_db = "root";
-$pass_db = "artescocielo10";
-$db_name = "ferreteria";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "ferreteria";
 
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
+// Crear una nueva instancia de la clase mysqli para establecer la conexión a la base de datos
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar si la conexión fue exitosa
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+} else {
+    echo "Conexión exitosa a la base de datos.";
 }
 
 class UserModel
@@ -47,21 +53,26 @@ class UserModel
         return $result->num_rows > 0;
     }
 
-    // Función para registrar un nuevo usuario
-    public function registrarUsuario($clienteDNI, $Nombre_cliente, $Apellido_cliente, $Telefono_cliente, $email_cliente, $direccion_cliente, $id_usuario)
+    public function registrarUsuario($clienteDNI, $Nombre_cliente, $Apellido_cliente, $Telefono_cliente, $email_cliente, $direccion_cliente, $nombreUsuario, $passwordusuario)
     {
         if ($this->conn === null) {
             throw new Exception("La conexión a la base de datos no está disponible.");
         }
 
         try {
-            // Modifica la llamada al procedimiento almacenado
-            $stmt = $this->conn->prepare("CALL InsertarCliente(?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("issisii", $clienteDNI, $Nombre_cliente, $Apellido_cliente, $Telefono_cliente, $email_cliente, $direccion_cliente, $id_usuario);
+            // Modificar la llamada al procedimiento almacenado
+            $sql = "CALL InsertarClienteYUsuario(?, ?, ?, ?, ?, ?, ?, ?)";
+            
+            // Asegurarse de que la conexión esté disponible y sea válida
+            if (!($stmt = $this->conn->prepare($sql))) {
+                throw new Exception("Error al preparar la consulta: " . $this->conn->error);
+            }
+
+            // Modificar los tipos de datos en bind_param según los tipos esperados en tu procedimiento almacenado
+            $stmt->bind_param("ississss", $clienteDNI, $Nombre_cliente, $Apellido_cliente, $Telefono_cliente, $email_cliente, $direccion_cliente, $nombreUsuario, $passwordusuario);
 
             // Ejecutar el procedimiento almacenado
             $success = $stmt->execute();
-            $stmt->close();
 
             if ($success) {
                 return true;
@@ -71,6 +82,11 @@ class UserModel
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
             return false;
+        } finally {
+            // Cerrar la declaración preparada si está definida
+            if (isset($stmt)) {
+                $stmt->close();
+            }
         }
     }
 

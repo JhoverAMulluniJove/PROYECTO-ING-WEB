@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with Ollie landing page.">
     <meta name="author" content="Devcrud">
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>FERRETERIA - CONTACTANOS</title>
@@ -23,7 +22,7 @@
     <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/assets/css/ollie.css">
 
 
-    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/CSS/shoppingcart.css">
+    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/css/shoppingcart.css">
 
 </head>
 

@@ -5,7 +5,7 @@ function cerrarSesion() {
 
     // Si el usuario hace clic en "Aceptar", redirige a index.php
     if (confirmacion) {
-        window.location.href = "../index.php";
+        window.location.href = "http://localhost/PROYECTO-ING-WEB/index.php";
     } else {
         // Si el usuario hace clic en "Cancelar", no hagas nada
     }

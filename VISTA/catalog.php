@@ -19,10 +19,10 @@ require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\CONTROLADOR\ProductoController.ph
     <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/assets/vendors/owl-carousel/css/owl.carousel.css">
     <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/assets/vendors/owl-carousel/css/owl.theme.default.css">
     <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/assets/css/ollie.css">
-    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/CSS/catalog.css">
-    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/CSS/table.css">
-    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/CSS/container.css">
-    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/CSS/shoppingcart.css">
+    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/css/catalog.css">
+    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/css/table.css">
+    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/css/container.css">
+    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/css/shoppingcart.css">
 
 </head>
 
@@ -41,7 +41,7 @@ require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\CONTROLADOR\ProductoController.ph
                 <ul class="navbar-nav ml-auto">
                   <!-- Navigation Links -->
                   <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/indexlogin.php">INICIO</a></li>
-                  <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/CONTROLADOR/ProductoController.php">CATALOGO</a></li>
+                  <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/catalog.php">CATALOGO</a></li>
                   <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/ContactUs.php">CONTACTANOS</a></li>
                   <li class="nav-item"><a class="btn btn-primary" href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
                 </ul>
@@ -89,7 +89,7 @@ require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\CONTROLADOR\ProductoController.ph
     <!-- Tu archivo de script externo -->
     <script src="../../../PROYECTO-ING-WEB/CONTROLADOR/js/addtocart.js"></script>
 
-    <script src="../../../PROYECTO-ING-WEB/CONTROLADOR/js/cerrarsesion.js"></script>
+    <script src="../../../PROYECTO-ING-WEB/CONTROLADOR/js/CerrarSesion.js"></script>
 </body>
 
 </html>

@@ -19,17 +19,17 @@ require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\CONTROLADOR\ProductoController.ph
     <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/assets/vendors/owl-carousel/css/owl.carousel.css">
     <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/assets/vendors/owl-carousel/css/owl.theme.default.css">
     <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/assets/css/ollie.css">
-    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/CSS/catalog.css">
-    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/CSS/table.css">
-    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/CSS/container.css">
-    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/CSS/shoppingcart.css">
+    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/css/catalog.css">
+    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/css/table.css">
+    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/css/container.css">
+    <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/css/shoppingcart.css">
 
 </head>
 
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" data-products='<?php echo json_encode($data); ?>'>
     
-    <nav class="navbar navbar-light bg-light navbar-expand-lg fixed-top">
+<nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="20">
         <div class="container">
             <a class="navbar-brand" href="#"><img src="../../../PROYECTO-ING-WEB/VISTA/assets/imgs/brand.svg" alt="" class="brand-img"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

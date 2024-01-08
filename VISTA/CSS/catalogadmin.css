@@ -1,0 +1,57 @@
+body {
+    background-color: #000; /* Fondo negro para la página */
+    color: #fff; /* Texto blanco */
+    margin: 0; /* Elimina el margen predeterminado del cuerpo */
+    font-family: Arial, sans-serif; /* Fuente predeterminada */
+}
+nav {
+    background-color: #666; /* Gris rata para el fondo de la barra de navegación */
+    color: #fff; /* Texto blanco en la barra de navegación */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #666; /* Gris rata para el fondo de la tabla */
+    color: #fff; /* Texto blanco dentro de la tabla */
+}
+.btn-agregar {
+    background-color: #3ddc35;
+    color: #fff; 
+}
+.btn-modificar {
+    background-color: #a79f28; 
+    color: #fff; 
+}
+.btn-eliminar {
+    background-color: #dc3545;
+    color: #fff;    
+}
+
+th, td {
+    border: 2px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+}
+
+tr:hover {
+    background-color: #555;
+}
+
+td a {
+    text-decoration: none;
+    color: #ffcc00;
+}
+
+td a:hover {
+    color: #ff9900;
+    font-weight: bold;
+}
+.custom-img {
+    width: 100px; /* Establece el ancho fijo */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
