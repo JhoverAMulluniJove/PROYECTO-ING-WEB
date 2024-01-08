@@ -1,8 +1,10 @@
 <?php
+
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
+require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\MODELO\conexion.php';
 require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\CONTROLADOR\ProductoController.php';
-
+$productoController = new ProductoController($conn);
 try {
     // Crear una instancia del controlador y pasar la conexión
     $productoController = new ProductoController($conn);
@@ -40,7 +42,6 @@ try {
     <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/css/container.css">
     <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/css/shoppingcart.css">
     <link rel="stylesheet" href="../../../PROYECTO-ING-WEB/VISTA/css/catalogadmin.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
 
 </head>
 
@@ -92,43 +93,32 @@ try {
             <tbody>
                 <?php foreach ($data as $row): ?>
                     <?php if (isset($row['nombre_producto']) && in_array($row['nombre_producto'], $dataaux) && isset($row['categoria_id_categoria']) && $row['categoria_id_categoria'] == $categoria_id): ?>
-                        <tr>
-                            <td>
-                                <img src="<?php echo $row['ruta_imagen']; ?>" class="img-thumbnail custom-img" alt="<?php echo $row['nombre_producto']; ?>">
-                            </td>
-                            <td><?php echo $row['nombre_producto']; ?></td>
-                            <td><?php echo $row['descripcion_producto']; ?></td>
-                            <td><?php echo $row['cantidad_producto']; ?></td>
-                            <td><?php echo $row['nombre_categoria']; ?></td>
-                            <td><?php echo $row['nombre_marca']; ?></td>
-                            <td><?php echo $row['nombre_proveedor']; ?></td>
-                            <td>S/.<?php echo $row['precio_producto']; ?></td>
-                            <td>
-                                <button type="button" class="btn btn-modificar" onclick="modificarProducto()">MODIFICAR</button>
-                                <button type="button" class="btn btn-eliminar" onclick="eliminarProducto('<?php echo $row['id_producto']; ?>')">ELIMINAR</button>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>
+                                    <img src="<?php echo $row['ruta_imagen']; ?>" class="img-thumbnail custom-img" alt="<?php echo $row['nombre_producto']; ?>">
+                                </td>
+                                <td><?php echo $row['nombre_producto']; ?></td>
+                                <td><?php echo $row['descripcion_producto']; ?></td>
+                                <td><?php echo $row['cantidad_producto']; ?></td>
+                                <td><?php echo $row['nombre_categoria']; ?></td>
+                                <td><?php echo $row['nombre_marca']; ?></td>
+                                <td><?php echo $row['nombre_proveedor']; ?></td>
+                                <td>S/.<?php echo $row['precio_producto']; ?></td>
+                                <td>
+                                    <a href="modificarProducto.php?id=<?php echo $row['id_producto']; ?>" class="btn btn-modificar btn-block">MODIFICAR</a>
+                                    <button class="btn btn-eliminar btn-block" onclick="eliminarProducto(<?php echo $row['id_producto']; ?>)">ELIMINAR</button>
+                                </td>
+                            </tr>
                     <?php endif; ?>
                 <?php endforeach; ?>
             </tbody>
         <?php endforeach; ?>
     </table>
-    
-    <!-- Core Scripts -->
-    <script src="../../PROYECTO-ING-WEB/VISTA/assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="../../PROYECTO-ING-WEB/VISTA/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-    
-    <!-- Bootstrap 3 affix -->
-    <script src="../../PROYECTO-ING-WEB/VISTA/assets/vendors/bootstrap/bootstrap.affix.js"></script>
-    
-    <!-- Owl carousel -->
-    <script src="../../PROYECTO-ING-WEB/VISTA/assets/vendors/owl-carousel/js/owl.carousel.js"></script>
-
-    <!-- Ollie JS -->
-    <script src="../../PROYECTO-ING-WEB/VISTA/assets/js/ollie.js"></script>
 
     <script src="../../../PROYECTO-ING-WEB/CONTROLADOR/js/CerrarSesion.js"></script>
-    <script src="../../../PROYECTO-INGWEB/CONTROLADOR/js/ProductoController.js"></script>
+    <script src="../../../PROYECTO-ING-WEB/CONTROLADOR/js/productocontroller.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 </body>
 
 </html>

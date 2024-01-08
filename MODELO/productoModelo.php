@@ -1,5 +1,4 @@
 <?php
-// ProductoModelo.php
 include 'conexion.php';
 
 class ProductoModelo {
@@ -81,34 +80,40 @@ class ProductoModelo {
         $stmt->bind_param("ssdisss", $nombre, $descripcion, $precio, $cantidad, $categoria, $marca, $proveedor);
     
         if ($stmt->execute()) {
-            return true; // Indica éxito al agregar el producto
+            return true;
         } else {
-            return false; // Indica fallo al agregar el producto
+            return false; 
         }
     
         $stmt->close();
     }    
 
     public function modificarProducto($id, $nombre, $descripcion, $precio, $cantidad, $categoria, $marca, $proveedor) {
-        $sql = "UPDATE producto
-                SET nombre_producto = '$nombre', descripcion_producto = '$descripcion', precio_producto = $precio, cantidad_producto = $cantidad,
-                    categoria_id_categoria = $categoria, marca_id_marca = $marca, proveedor_id_proveedor = $proveedor
-                WHERE id_producto = $id";
-    
-        if ($this->conn->query($sql) === TRUE) {
-            echo "Producto editado exitosamente.";
+        $sql = "CALL ModificarProducto(?, ?, ?, ?, ?, ?, ?, ?)";
+        
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("issdisss", $id, $nombre, $descripcion, $precio, $cantidad, $categoria, $marca, $proveedor);
+        
+        if ($stmt->execute()) {
+            return true;
         } else {
-            echo "Error al editar el producto: " . $this->conn->error;
+            echo "Error al modificar el producto: " . $stmt->error;
+            return false;
         }
+        
+        $stmt->close();
     }
+    
 
     public function eliminarProducto($id) {
-        $sql = "DELETE FROM producto WHERE id_producto = $id";
-    
-        if ($this->conn->query($sql) === TRUE) {
-            echo "Producto eliminado exitosamente.";
+        $sql = "DELETE FROM producto WHERE id_producto = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("i", $id);
+
+        if ($stmt->execute()) {
+            return true;
         } else {
-            echo "Error al eliminar el producto: " . $this->conn->error;
+            return false;
         }
     }
 

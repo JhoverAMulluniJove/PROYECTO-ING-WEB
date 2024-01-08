@@ -2,27 +2,16 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\MODELO\conexion.php';
-require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\CONTROLADOR\ProductoController.php';
-require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\MODELO\productoModelo.php';
+require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\MODELO\UserModelo.php';
 
-class ProductoController {
+class UsuarioController {
     
     private $conn;
-    private $productoModelo;
+    private $userModelo;
 
     public function __construct($conn) {
         $this->conn = $conn;
-        $this->productoModelo = new ProductoModelo($conn);
-    }
-
-    public function obtenerCategorias() {
-        return $this->productoModelo->obtenerCategorias();
-    }
-    public function obtenerMarcas() {
-        return $this->productoModelo->obtenerMarcas();
-    }
-    public function obtenerProveedores() {
-        return $this->productoModelo->obtenerProveedores();
+        $this->userModelo = new UserModel($conn);
     }
 
     public function obtenerProductos() {
@@ -59,29 +48,7 @@ class ProductoController {
         // Redirigir después de modificar el producto
         header("Location: ../VISTA/admin/catalog.php");
         exit();
-    }
-
-    public function eliminarProducto() {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_producto'])) {
-            $idProducto = $_POST['id_producto'];
-        
-            try {
-                // Crear una instancia de ProductoModelo con tu conexión
-                $productoModelo = new ProductoModelo($conn);
-        
-                // Intentar eliminar el producto
-                if ($productoModelo->eliminarProducto($idProducto)) {
-                    echo 'success';
-                } else {
-                    echo 'error al intentar eliminar el producto';
-                }
-            } catch (Exception $e) {
-                echo 'error al intentar eliminar el producto: ' . $e->getMessage();
-            }
-        } else {
-            echo 'error: solicitud incorrecta';
-        }
-    }    
+    }   
 
     public function restaurarProducto($id) {
         $this->productoModelo->restaurarProducto($id);

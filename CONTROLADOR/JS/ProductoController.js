@@ -1,35 +1,49 @@
-function modificarProducto() {
-    // Aquí puedes agregar lógica para modificar un producto en JavaScript
-    // Puedes enviar datos al servidor mediante AJAX o realizar otras operaciones según tus necesidades
-    console.log('Función modificarProducto() ejecutada');
-}
-
-function eliminarProducto() {
-    window.location.href = "ProductoController.php"
-    var confirmacion = confirm('¿Estás seguro de que deseas eliminar el producto?');
-    
-    if (confirmacion) {
-        // Aquí puedes agregar lógica para eliminar un producto en JavaScript
-        // Puedes enviar datos al servidor mediante AJAX o realizar otras operaciones según tus necesidades
-        console.log('Función eliminarProducto() ejecutada');
-        
-        // También puedes redirigir a una página de confirmación o realizar otras acciones después de eliminar
+function eliminarProducto(idProducto) {
+    if (confirm('¿Estás seguro de que quieres eliminar este producto?')) {
+        $.ajax({
+            type: 'POST',
+            url: '../../CONTROLADOR/eliminar_producto.php', // Ruta al archivo PHP que manejará la eliminación
+            data: { id_producto: idProducto },
+            success: function (response) {
+                if (response === 'success') {
+                    // Actualizar la interfaz o realizar otras acciones si es necesario
+                    alert('Producto eliminado exitosamente');
+                    location.reload(); // Recargar la página, por ejemplo
+                } else {
+                    alert('Error al intentar eliminar el producto');
+                }
+            },
+            error: function () {
+                alert('Error de conexión al intentar eliminar el producto');
+            }
+        });
     }
 }
-function mostrarFormulario() {
-    // Muestra el formulario o modal
-    document.getElementById('formularioAgregar').style.display = 'block';
-}
-
-function agregarProducto() {
-    // Obtén los valores de los campos de entrada
-    var nombre = document.getElementById('nombreProducto').value;
-    var descripcion = document.getElementById('descripcionProducto').value;
-    // Obtén otros campos de entrada según sea necesario
-
-    // Llama a la función en el controlador para agregar el producto
-    productoController.agregarProducto(nombre, descripcion, /* otros campos */);
-
-    // Oculta el formulario o modal después de agregar el producto
-    document.getElementById('formularioAgregar').style.display = 'none';
+function modificarProducto(idProducto, nuevoNombre, nuevaDescripcion, nuevoPrecio, nuevaCantidad, nuevaCategoria, nuevaMarca, nuevoProveedor) {
+    $.ajax({
+        type: 'POST',
+        url: '../../CONTROLADOR/modificar_producto.php', // Ruta al archivo PHP que manejará la modificación
+        data: {
+            id_producto: idProducto,
+            nombre: nuevoNombre,
+            descripcion: nuevaDescripcion,
+            precio: nuevoPrecio,
+            cantidad: nuevaCantidad,
+            categoria: nuevaCategoria,
+            marca: nuevaMarca,
+            proveedor: nuevoProveedor
+        },
+        success: function (response) {
+            if (response === 'success') {
+                // Actualizar la interfaz o realizar otras acciones si es necesario
+                alert('Producto modificado exitosamente');
+                location.reload(); // Recargar la página, por ejemplo
+            } else {
+                alert('Error al intentar modificar el producto');
+            }
+        },
+        error: function () {
+            alert('Error de conexión al intentar modificar el producto');
+        }
+    });
 }
