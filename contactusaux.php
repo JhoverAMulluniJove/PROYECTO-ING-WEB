@@ -38,9 +38,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                  <!-- Navigation Links -->
                   <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/index.php">INICIO</a></li>
-                  <!--<li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/CONTROLADOR/ProductoController.php">CATALOGO</a></li>-->
                   <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/contactusaux.php">CONTACTANOS</a></li>
                   <li class="nav-item"><a class="btn btn-primary" href="VISTA/login.php">Login</a></li>
                 </ul>
@@ -93,7 +91,6 @@
         </div>
     </section>
 
-    <!-- Page Footer -->
     <footer class="footer py-4 bg-light"> 
         <div class="container text-center">
             <p class="mb-4 small">Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="http://www.devcrud.com">DevCRUD</a></p>
@@ -107,7 +104,6 @@
             </div>
         </div>
     </footer>
-    <!-- End of page footer -->
 
     <!-- Core Scripts -->
     <script src="../../../PROYECTO-ING-WEB/VISTA/assets/vendors/jquery/jquery-3.4.1.js"></script>

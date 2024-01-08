@@ -9,7 +9,7 @@
     <div class="container">
         <h2>FERRETERIA</h2>
         <?php include '../CONTROLADOR/errorlogin.php'?>
-        <!-- Formulario de inicio de sesión -->
+
         <form id="loginForm" method="post" action="../CONTROLADOR/UserController.php">
             <label for="nombre_usuario">Nombre de Usuario:</label>
             <input type="text" id="nombre_usuario" name="nombre_usuario" required>

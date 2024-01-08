@@ -52,7 +52,7 @@ body {
 .buy-button {
   background-color: #ff8c00;
   color: #fff;
-  padding: 10px 50px; /* Ajustado el padding para mayor espacio horizontal */
+  padding: 10px 50px;
   border: none;
   cursor: pointer;
 }
@@ -69,7 +69,7 @@ body {
 #cart {
   background-color: #ffd700;  
   padding: 20px;
-  margin: 20px 100px; /* Reducido el margen vertical */
+  margin: 20px 100px;
 }
 
 #total {

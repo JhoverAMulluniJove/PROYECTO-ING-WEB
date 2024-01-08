@@ -41,7 +41,6 @@ require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\CONTROLADOR\ProductoController.ph
                 <ul class="navbar-nav ml-auto">
                   <!-- Navigation Links -->
                   <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/index.php">INICIO</a></li>
-                  <!--<li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/CONTROLADOR/ProductoController.php">CATALOGO</a></li>-->
                   <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/contactusaux.php">CONTACTANOS</a></li>
                   <li class="nav-item"><a class="btn btn-primary" href="VISTA/login.php">Login</a></li>
                 </ul>
@@ -73,7 +72,6 @@ require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\CONTROLADOR\ProductoController.ph
                 </tr>
             </thead>
             <tbody>
-                <!-- Aquí se mostrarán los productos en el carrito -->
             </tbody>
         </table>
         <div id="cart-total">

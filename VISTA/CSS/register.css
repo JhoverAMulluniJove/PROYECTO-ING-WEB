@@ -20,7 +20,7 @@ body {
 .container h2 {
     margin-top: 15px;
     text-align: center;
-    color: #ffffff; /* Cambia este color según tus preferencias */
+    color: #ffffff; 
 }
 
 .logo {
@@ -41,7 +41,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 10px;
     box-sizing: border-box;
-    color: #000000; /* Cambia este color según tus preferencias */
+    color: #000000; 
 }
 
 .container input[type="submit"] {
@@ -49,7 +49,7 @@ body {
     padding: 10px;
     background-color: #08c32a;
     border: none;
-    color: #ffffff; /* Cambia este color según tus preferencias */
+    color: #ffffff; 
     border-radius: 10px;
     cursor: pointer;
 }
@@ -61,21 +61,21 @@ body {
 label {
     display: block;
     margin-bottom: 8px;
-    color: #ffffff; /* Color del texto de las etiquetas (blanco en este caso) */
-    text-align: left; /* Alinea el texto de la etiqueta a la izquierda */
+    color: #ffffff; 
+    text-align: left; 
 }
 
-/* Estilo para el botón de registro */
+
 .container button[type="submit"] {
     width: 100%;
     padding: 10px;
-    background-color: #b80f0f; /* Cambia este color según tus preferencias */
+    background-color: #b80f0f;
     border: none;
-    color: #ffffff; /* Cambia este color según tus preferencias */
+    color: #ffffff;
     border-radius: 10px;
     cursor: pointer;
 }
 
 .container button[type="submit"]:hover {
-    background-color: #0056b3; /* Cambia este color según tus preferencias */
+    background-color: #0056b3;
 }

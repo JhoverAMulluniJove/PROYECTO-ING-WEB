@@ -2,16 +2,16 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\MODELO\conexion.php';
-require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\CONTROLADOR\ProductoController.php';
+require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\CONTROLADOR\UsuarioController.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_producto'])) {
-    $idProducto = $_POST['id_producto'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_usuario'])) {
+    $idUsuario = $_POST['id_usuario'];
 
     try {
 
-        $productoModelo = new ProductoModelo($conn);
+        $userModel = new UserModel($conn);
 
-        if ($productoModelo->eliminarProducto($idProducto)) {
+        if ($userModel->eliminarUsuario($idUsuario)) {
             echo 'success';
         } else {
             echo 'error al intentar eliminar el producto';

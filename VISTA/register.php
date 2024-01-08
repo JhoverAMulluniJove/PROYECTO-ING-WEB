@@ -10,7 +10,6 @@
     <div class="container">
         <h2>FERRETERIA</h2>
 
-        <!-- Formulario de registro de usuario -->
         <form id="registerForm" method="post" action="../CONTROLADOR/RegisterController.php">
             <label for="nombre_usuario">Nombre de Usuario:</label>
             <input type="text" id="nombre_usuario" name="nombre_usuario" required>

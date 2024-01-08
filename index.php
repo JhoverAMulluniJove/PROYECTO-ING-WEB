@@ -39,7 +39,6 @@
                     <li class="nav-item"><a class="nav-link" href="#about">ACERCA DE</a></li>
                     <li class="nav-item"><a class="nav-link" href="#offer">OFERTAS</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">DESTACADOS</a></li>
-                    <!--<li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/CONTROLADOR/ProductoController.php">CATALOGO</a></li>-->
                     <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/contactusaux.php">CONTACTANOS</a></li>
                     <li class="nav-item"><a class="btn btn-primary" href="VISTA/login.php">Login</a></li>
                     

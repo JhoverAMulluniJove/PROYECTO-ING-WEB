@@ -29,69 +29,11 @@ class ProductoController {
         return $this->productoModelo->obtenerProductos();
     }
 
-    public function agregarProducto($nombre, $descripcion, $precio, $cantidad, $categoria, $marca, $proveedor) {
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Recibir datos del formulario
-            $nombre = $_POST["nombre"];
-            $descripcion = $_POST["descripcion"];
-            $precio = $_POST["precio"];
-            $cantidad = $_POST["cantidad"];
-            $categoria = $_POST["categoria"];
-            $marca = $_POST["marca"];
-            $proveedor = $_POST["proveedor"];
-            $productoController = new ProductoController($conn);
-    
-            // Agregar el producto
-            $productoController->agregarProducto($nombre, $descripcion, $precio, $cantidad, $categoria, $marca, $proveedor);
-
-            // Cerrar conexión
-            $conn->close();
-
-            // Redireccionar a catalog.php después de agregar el producto
-            header("Location: ../VISTA/admin/catalog.php");
-            exit();
-        }
-    }
-
-    public function modificarProducto($id, $nombre, $descripcion, $precio, $cantidad, $categoria, $marca, $proveedor) {
-        // Llamada a la función del modelo para modificar el producto
-        $this->productoModelo->modificarProducto($id, $nombre, $descripcion, $precio, $cantidad, $categoria, $marca, $proveedor);
-        // Redirigir después de modificar el producto
-        header("Location: ../VISTA/admin/catalog.php");
-        exit();
-    }
-
-    public function eliminarProducto() {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_producto'])) {
-            $idProducto = $_POST['id_producto'];
-        
-            try {
-                // Crear una instancia de ProductoModelo con tu conexión
-                $productoModelo = new ProductoModelo($conn);
-        
-                // Intentar eliminar el producto
-                if ($productoModelo->eliminarProducto($idProducto)) {
-                    echo 'success';
-                } else {
-                    echo 'error al intentar eliminar el producto';
-                }
-            } catch (Exception $e) {
-                echo 'error al intentar eliminar el producto: ' . $e->getMessage();
-            }
-        } else {
-            echo 'error: solicitud incorrecta';
-        }
-    }    
-
-    public function restaurarProducto($id) {
-        $this->productoModelo->restaurarProducto($id);
-    }
-
     public function obtenerNombresProductos() {
         $sqlaux = "SELECT nombre_producto FROM producto";
         $resultaux = $this->conn->query($sqlaux);
 
-        $dataaux = array(); // Array para almacenar los nombres de productos
+        $dataaux = array(); 
 
         if ($resultaux !== false) {
             while ($rowaux = $resultaux->fetch_assoc()) {

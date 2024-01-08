@@ -1,10 +1,8 @@
 <?php
-// Incluye el archivo de configuración de la base de datos
 require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\MODELO\conexion.php';
 require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\MODELO\productoModelo.php';
 require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\CONTROLADOR\ProductoController.php';
 
-// Obtén el ID del producto de la URL
 $idProducto = isset($_GET['id']) ? $_GET['id'] : null;
 
 ?>
@@ -33,6 +31,8 @@ $idProducto = isset($_GET['id']) ? $_GET['id'] : null;
 
 <body>
 
+    <br><h2>Modificar Producto</h2>
+
     <form action="../../CONTROLADOR/ModificarController.php" method="post">
         <label for="id_producto">Id del Producto:</label>
         <input type="text" id="id_producto" name="id_producto" value="<?php echo $idProducto; ?>" required><br>
@@ -50,14 +50,11 @@ $idProducto = isset($_GET['id']) ? $_GET['id'] : null;
         <input type="text" id="cantidad" name="cantidad" required><br>
 
         <label for="categoria">Categoría:</label>
-        <!-- Aquí puedes cargar las categorías desde tu controlador -->
         <select id="categoria" name="categoria">
             <?php
                 $productoController = new ProductoController($conn);
-                // Obtener las categorías desde el controlador o modelo
                 $categorias = $productoController->obtenerCategorias();
 
-                // Iterar sobre las categorías y generar las opciones del select
                 foreach ($categorias as $idCategoria => $nombreCategoria) {
                     echo "<option value=\"$nombreCategoria\">$nombreCategoria</option>";
                 }
@@ -69,10 +66,8 @@ $idProducto = isset($_GET['id']) ? $_GET['id'] : null;
         <select id="marca" name="marca">
             <?php
                 $productoController = new ProductoController($conn);
-                // Obtener las marcas desde el controlador o modelo
                 $marcas = $productoController->obtenerMarcas();
 
-                // Iterar sobre las marcas y generar las opciones del select
                 foreach ($marcas as $idMarca => $nombreMarca) {
                     echo "<option value=\"$nombreMarca\">$nombreMarca</option>";
                 }
@@ -83,10 +78,8 @@ $idProducto = isset($_GET['id']) ? $_GET['id'] : null;
         <select id="proveedor" name="proveedor">
             <?php
                 $productoController = new ProductoController($conn);
-                // Obtener los proveedores desde el controlador o modelo
                 $proveedores = $productoController->obtenerProveedores();
 
-                // Iterar sobre los proveedores y generar las opciones del select
                 foreach ($proveedores as $idProveedor => $nombreProveedor) {
                     echo "<option value=\"$nombreProveedor\">$nombreProveedor</option>";
                 }

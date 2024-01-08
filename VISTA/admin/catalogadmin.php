@@ -4,22 +4,19 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\MODELO\conexion.php';
 require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\CONTROLADOR\ProductoController.php';
-$productoController = new ProductoController($conn);
+
 try {
-    // Crear una instancia del controlador y pasar la conexión
+
     $productoController = new ProductoController($conn);
 
-    // Llamar a la función para obtener categorías
     $categorias = $productoController->obtenerCategorias();
 
-    // Obtener datos para mostrar
     $data = $productoController->obtenerProductos();
     $dataaux = $productoController->obtenerNombresProductos();
 
 } catch (Exception $e) {
-    // Manejar cualquier excepción que pueda ocurrir durante la ejecución
     echo "Error: " . $e->getMessage();
-    die(); // Detener la ejecución en caso de error
+    die(); 
 }
 
 ?>
@@ -57,7 +54,6 @@ try {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/admin/indexloginadmin.php">INICIO</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/admin/Featured.php">DESTACADOS</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/admin/catalogadmin.php">CATALOGO</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../../PROYECTO-ING-WEB/VISTA/admin/usuariosadmin.php">USUARIOS</a></li>
                     <li class="nav-item"><a class="btn btn-primary" href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
@@ -67,7 +63,7 @@ try {
     </nav>
 
     <br><br><br><br>
-    <!-- Cabecera -->
+
     <header class="container">
         <br>
         <h1>Ferretería Catálogo</h1>

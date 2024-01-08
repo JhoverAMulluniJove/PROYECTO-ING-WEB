@@ -4,20 +4,17 @@ ini_set('display_errors', '1');
 require_once 'C:\xampp\htdocs\PROYECTO-ING-WEB\CONTROLADOR\ProductoController.php';
 
 try {
-    // Crear una instancia del controlador y pasar la conexión
     $productoController = new ProductoController($conn);
 
-    // Llamar a la función para obtener categorías
     $categorias = $productoController->obtenerCategorias();
 
-    // Obtener datos para mostrar
     $data = $productoController->obtenerProductos();
     $dataaux = $productoController->obtenerNombresProductos();
 
 } catch (Exception $e) {
-    // Manejar cualquier excepción que pueda ocurrir durante la ejecución
+
     echo "Error: " . $e->getMessage();
-    die(); // Detener la ejecución en caso de error
+    die();
 }
 
 ?>
