@@ -23,7 +23,7 @@
         $userModel = new UserModel($conexion);
 
         if ($userModel->iniciarSesion($nombreUsuario, $passwordusuario)) {
-            if($nombreUsuario = "admin"){
+            if($nombreUsuario == 'admin'){
                 header("Location: ../VISTA/admin/indexloginadmin.php");
             }
             else{

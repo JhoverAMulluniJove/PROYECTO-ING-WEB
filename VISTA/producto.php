@@ -31,6 +31,8 @@ try {
                     <tr>
                         <th>Imagen</th>
                         <th>Nombre</th>
+                        <th>Marca</th>
+                        <th>Proveedor</th>
                         <th>Descripción</th>
                         <th>Stock</th>
                         <th>Precio</th>
@@ -45,6 +47,8 @@ try {
                                     <img src="<?php echo $row['ruta_imagen']; ?>" class="img-thumbnail" alt="<?php echo $row['nombre_producto']; ?>" style="max-width: 100px; height: auto;">
                                 </td>
                                 <td><?php echo $row['nombre_producto']; ?></td>
+                                <td><?php echo $row['nombre_marca']; ?></td>
+                                <td><?php echo $row['nombre_proveedor']; ?></td>
                                 <td><?php echo $row['descripcion_producto']; ?></td>
                                 <td><?php echo $row['cantidad_producto']; ?></td>
                                 <td>S/.<?php echo $row['precio_producto']; ?></td>

@@ -95,7 +95,16 @@ try {
                     <td><?php echo $row['email_cliente']; ?></td>
                     <td><?php echo $row['direccion_cliente']; ?></td>
                     <td>
-                        <a href="modificarUsuario.php?id=<?php echo $row['id_usuario']; ?>" class="btn btn-modificar btn-block">MODIFICAR</a>
+                        <a href="modificarUsuario.php?
+                        id=<?php echo $row['id_usuario']; ?>
+                        &nombre=<?php echo $row['nombre_usuario']; ?>
+                        &dni=<?php echo $row['DNI']; ?>
+                        &nombre_cliente=<?php echo $row['Nombre_cliente']; ?>
+                        &apellido_cliente=<?php echo $row['Apellido_cliente']; ?>
+                        &telefono_cliente=<?php echo $row['Telefono_cliente']; ?>
+                        &email_cliente=<?php echo $row['email_cliente']; ?>
+                        &direccion_cliente=<?php echo $row['direccion_cliente']; ?>" 
+                        class="btn btn-modificar btn-block">MODIFICAR</a>
                         <button class="btn btn-eliminar btn-block" onclick="eliminarUsuario(<?php echo $row['id_usuario']; ?>)">ELIMINAR</button>
                     </td>
                 </tr>
@@ -104,7 +113,7 @@ try {
     </table>
 
     <script src="../../../PROYECTO-ING-WEB/CONTROLADOR/js/CerrarSesion.js"></script>
-    <script src="eliusu.js"></script>
+    <script src="../../../PROYECTO-ING-WEB/CONTROLADOR/js/eliusu.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 </body>

@@ -101,7 +101,16 @@ try {
                                 <td><?php echo $row['nombre_proveedor']; ?></td>
                                 <td>S/.<?php echo $row['precio_producto']; ?></td>
                                 <td>
-                                    <a href="modificarProducto.php?id=<?php echo $row['id_producto']; ?>" class="btn btn-modificar btn-block">MODIFICAR</a>
+                                    <a href="modificarProducto.php?
+                                    id=<?php echo $row['id_producto']; ?>
+                                    &name=<?php echo $row['nombre_producto']; ?>
+                                    &descripcion=<?php echo $row['descripcion_producto']; ?>
+                                    &stock=<?php echo $row['cantidad_producto']; ?>
+                                    &namecategoria=<?php echo $row['nombre_categoria']; ?>
+                                    &namemarca=<?php echo $row['nombre_marca']; ?>
+                                    &namepro=<?php echo $row['nombre_proveedor']; ?>
+                                    &price=<?php echo $row['precio_producto']; ?>" 
+                                    class="btn btn-modificar btn-block">MODIFICAR</a>
                                     <button class="btn btn-eliminar btn-block" onclick="eliminarProducto(<?php echo $row['id_producto']; ?>)">ELIMINAR</button>
                                 </td>
                             </tr>
